@@ -1,0 +1,37 @@
+---
+title: "eds212_day2_activities"
+author: "Vedika"
+format: html
+editor: visual
+---
+
+## Deriving and Plotting Derivatives in R
+
+Here, we can explore how to derive and plot derivatives from their parent functions using ggplot and D()
+
+### Load the packages*
+**NOTE: You'll need to use install.packages if R cannot find them.
+```{r}
+library(tidyverse)
+library(palmerpenguins)
+```
+
+### Finding slopes
+
+Find the slope of f(x) = x^2 if x = 3. 
+
+```{r}
+#we can use the D() function directly without having to store the expression in a variable
+my_deriv <- D(exp = expression(x^2), name = "x")
+x = 3
+eval(my_deriv)
+
+## do the same thing for: P(a) 2(3a+2)^4 05 if a = 1.2
+my_deriv <- D(exp = expression(2*(3*a + 2)^4 - 5), name = "a")
+a = 1.2
+eval(my_deriv)
+
+```
+
+
+
