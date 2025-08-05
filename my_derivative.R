@@ -21,6 +21,15 @@ my_derivative_2
 #one small change
 
 
+## plotting example, but first install and call the needed packages
+library(ggplot2)
+library(palmerpenguins)
+library(tidyverse)
+str(penguins)
 
+penguins %>% ggplot(aes(x = body_mass_g, y = flipper_length_mm, col = factor(species))) + geom_point() +  
+                      scale_color_manual(values = c("darkorange", "purple", "cyan4")) + 
+      facet_wrap(~island) +
+                       theme_minimal() + labs(title = "Body Mass of Different Penguin Species Relative to Flipper Length",   x = "Body Mass (g)", y = "Flipper Length (mm)", caption = "Collected by Dr. Kristen Gorman")
 
 
