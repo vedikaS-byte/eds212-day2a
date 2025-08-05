@@ -17,7 +17,8 @@ my_derivative
 
 my_derivative_2<- D(exp = expression((2*y^3 + 1)^4 - 8*y^3), name = "y")
 my_derivative_2
-?D()
+
+#one small change
 
 
 
