@@ -30,8 +30,33 @@ eval(my_deriv)
 my_deriv <- D(exp = expression(2*(3*a + 2)^4 - 5), name = "a")
 a = 1.2
 eval(my_deriv)
+```
+# Making Another Penguin Plot
+Now, we will use the penguins dataset in the palmerpenguins library to practice plotting data in ggplot. In data science, it is essential to visualize your data for trends and patterns to gain a better understanding of your dataset before performing any additional wrangling, tidying, etc. 
+
+```{r}
+# using data piping as a force of habit
+str(penguins)
+penguins %>% ggplot(aes(x = bill_length_mm, y = bill_depth_mm, col = factor(species))) + geom_point() + theme_bw() + 
+  labs(x = "Bill length (mm)", y = "Bill depth (mm)", col = "Species") + guides(col = F)
 
 ```
+Sometimes, points can lie on top of each other and need to be "shaken". We'll use geom_jitter() to do this.
+
+```{r}
+penguins %>% ggplot(aes(x = bill_length_mm, y = factor(species), col = factor(species))) + geom_jitter() + theme_bw() + 
+  labs(x = "Bill length (mm)", y = "Species", title = "Bill length by penguin species") + guides(col = F)
+
+```
+
+
+
+
+
+
+
+
+
 
 
 
