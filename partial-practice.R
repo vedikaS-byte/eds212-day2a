@@ -53,3 +53,11 @@ df_dx <- D(expr = f_xyz, name = "x")
 df_dx <- D(expr = f_xyz, name = "z")
 
 
+# INSTRUCTIONS: save, stage (check box file in git tab), commit with description, push
+
+
+
+
+
+
+
