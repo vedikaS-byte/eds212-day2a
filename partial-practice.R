@@ -41,5 +41,15 @@ dc_dt_fun <- function(t){
 my_df_range_2 %>% ggplot(aes(x = t)) + geom_function(fun = ct, col = "darkred") + 
   geom_function(fun = dc_dt_fun, col = "darkblue")+ theme_bw()
 
+#......................partial derivatives.......................
+
+#create expression
+f_xyz <- expression(2*x*y - 3*x^2*z^3)
+
+#partial derivative with respect to x
+df_dx <- D(expr = f_xyz, name = "x")
+
+#partial derivative with respect to z
+df_dx <- D(expr = f_xyz, name = "z")
 
 
